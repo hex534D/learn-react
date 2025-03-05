@@ -1,30 +1,59 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-const jsxHeading = <h1 id="heading">Hello from JSX 😁</h1>;
-
-const ContentComponent = () => (
-  <p id="title">
-    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero
-    ipsa aut sunt! Maxime quas ex consectetur voluptatem. Soluta,
-    consequatur fugit. Velit, aliquid. Ex cumque natus eveniet aut
-    eligendi deleniti unde. 😎
-  </p>
+const HeaderComponent = () => (
+  <div className="header">
+    <div className="logo">
+      <img
+        src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/food-app-icon-food-explorer-design-template-8ae900e41ccbc0a2e1b48a85d239e389_screen.jpg"
+        height="20px"
+        alt="Food app logo"
+      />
+    </div>
+    <div className="nav-items">
+      <ul>
+        <li>Home</li>
+        <li>About Us</li>
+        <li>Contact Us</li>
+        <li>Cart</li>
+      </ul>
+    </div>
+  </div>
 );
 
-const copyRight = <span>&copy; 2024</span>;
-const Header = <h1>Hello from Header 😊</h1>;
-const Footer = <h1 class="footer">Hello from Footer {copyRight}</h1>;
+const RestaurantCard = () => (
+  <div className="res-card" style={{ backGroundColor: '#f0f0f0' }}>
+    <img
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScbGnKlHcN4VwmLUtANujTyMVO-I16xvmIvQ&s"
+      alt="Restaurant Image"
+    />
+    <h3>Olive Garden</h3>
+    <h4>Italian Kitchen</h4>
+    <h4>4.1 stars</h4>
+    <h4>20 minutes</h4>
+  </div>
+);
 
-const MainComponent = () => (
-  <>
-    {Header}
-    {ContentComponent()}
-    {/* <ContentComponent /> */}
-    {Footer}
-  </>
+const BodyComponent = () => (
+  <div className="main">
+    <div className="search">Search Component</div>
+    <div className="restaurant-container">
+      <RestaurantCard />
+      <RestaurantCard />
+      <RestaurantCard />
+      <RestaurantCard />
+      <RestaurantCard />
+    </div>
+  </div>
+);
+
+const AppLayoutComponent = () => (
+  <div className="container">
+    <HeaderComponent />
+    <BodyComponent/>
+  </div>
 );
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-root.render(<MainComponent />);
+root.render(<AppLayoutComponent />);
